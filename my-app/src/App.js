@@ -1,58 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import axios from "axios";
+import React from "react";
+import { connect } from "react-redux";
+import "./App.css";
+import { dummyData } from "./dummyData";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
+const App = props => {
+	// useEffect(() => {
+	// 	// "https://api.jikan.moe/v3/search/manga?q=Grand%20Blue&page=1"
+	// 	axios
+	// 		.get("https://api.jikan.moe/v3/search/manga?q=Grand%20Blue&page=1")
+	// 		.then((res) => {
+	// 			console.log(res.data.results);
+	// 			setState(res.data.results);
+	// 		})
+	// 		.catch((error) => {
+	// 			console.log(error.error);
+	// 		});
+	// }, []);
+	return (
+		<div className="App">
+			<div className="NavBar"></div>
+			<div className="Main">
+				<div className="MainTitle"></div>
+				<div className="Showcase"></div>
+				<div className="Sideview"></div>
+			</div>
+			{/* <h1>Anima</h1>
+			<h3>Find your anime here</h3>
+			<form className="form">
+				<label>
+					Type Here
+					<input type="text" id="input" />
+				</label>
+			</form>
+
+			<div class="animeList">
+				{dummyData.map((item) => (
+					<img alt="" src={item.image_url} />
+				))}
+			</div> */}
+		</div>
+	);
 }
-
-export default App;
+const mapStateToProps = (State) => {
+	return {};
+};
+export default connect(mapStateToProps, {})(App);
