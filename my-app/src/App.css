@@ -1,0 +1,16 @@
+.App {
+	text-align: center;
+	margin: 0% auto;
+	padding: 0% auto;
+}
+.animeList {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+}
+.form {
+	margin: 2%;
+}
+#input {
+	width: 40%;
+}
